@@ -49,5 +49,5 @@ end
 
 -- Commands & Keymaps
 vim.api.nvim_create_user_command('FloTerminal', toggle_terminal, {})
-vim.keymap.set({ 'n', 't' }, '<space>tt', toggle_terminal)
+vim.keymap.set('n', '<space>tt', toggle_terminal, { desc = 'Toggle Terminal' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
