@@ -12,3 +12,13 @@ vim.pack.add {
 
 -- set keymaps
 vim.keymap.set('n', '<leader>te', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle Explorer' })
+
+-- Make it to refocus on itself after opening a file
+require('neo-tree').setup {
+  event_handlers = {
+    {
+      event = 'file_opened',
+      handler = function(_) vim.cmd 'Neotree focus' end,
+    },
+  },
+}
